@@ -1,0 +1,55 @@
+//React.createElement => object  => after rendering it to DOM => html element
+// const heading = React.createElement("h1",
+//     { id: "heading" }
+//     , "Hello Akash bro")
+
+//JSX JS is a js syntax to create react element
+// const jsxHeading = (
+// <h1 className="head" tabIndex="5">
+// Namaste React using JSX </h1>
+// );
+
+// console.log(jsxHeading);
+
+// React Element  
+// const heading (
+//     <h1 className="head" tabindex="5">
+//         Namaste React using JSX✔
+//     </h1>
+// );
+
+const Title = () => (
+    <h1 className="head" tabIndex="5">
+        Namaste React using JSX✔
+    </h1>
+);
+
+const num = 100-92;
+
+//React components -> 2 types
+// Class based components - old way
+// Functional Components - new way
+
+//React Functional Component -> its a function that returns a React Element/JSX 
+const HeadingComponent = () => {
+    return <div>
+        <h3>The answer is {num}</h3>
+        {num}     
+        <Title />
+        <h1>Hello this is react Fun ctional Component</h1>
+    </div>
+};
+
+// const fn = ()=>{
+//     return true;
+// }
+// short hand syntax
+// const fn = () => true;
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+//rendering a react element
+// root.render(jsxHeading);
+
+//rendering a functional component
+root.render(<HeadingComponent />);
