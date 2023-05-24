@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import logo1 from "../assets/Frame1.png";
 import { useState } from "react";
+import { Link } from "react-router-dom"; //link component
 
 const loggedInUser = () => {
     //api call to check authentication status
@@ -10,28 +11,48 @@ const loggedInUser = () => {
     return false;
 }
 
+const Title = () => (
+    <a href="/">
+        <img className="logo" alt="logo" src={logo1} />
+    </a>
+);
+
 const Header = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const [title, setTitle] = useState("Eat Street")
+
     return (
         <div className="headerMain">
             <div className="wrapper">
                 <div className="header">
+                    <Title />
                     <div  >
                         {/* <img className="logo" src={LOGO_URL} /> */}
-                        <img className="logo-header" src={logo1} />
+
                         <h1>{title}</h1>
-                    <button onClick={() => { setTitle("Welcome Akash") }
-                    }>Press Button</button>
+                        <button onClick={() => { setTitle("Welcome Akash") }
+                        }>Press Button</button>
                     </div>
 
                     <div className="nav-items">
                         <ul>
-                            <li> <a href="#">Home</a></li>
-                            <li> <a href="#">About Us</a></li>
-                            <li> <a href="#">Contact Us</a></li>
+                            <li>
+                                <Link to="/">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/about">
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/contact">
+                                    Contact Us
+                                </Link>
+                            </li>
                             <li> <a href="#">Cart</a></li>
                         </ul>
                     </div>
@@ -49,11 +70,11 @@ const Header = () => {
 
 
                     }
-                    {isLoggedIn 
-                    ? 
-                    <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-                    : 
-                    <button onClick={() => setIsLoggedIn(true)}>Login</button>
+                    {isLoggedIn
+                        ?
+                        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+                        :
+                        <button onClick={() => setIsLoggedIn(true)}>Login</button>
                     }
 
 

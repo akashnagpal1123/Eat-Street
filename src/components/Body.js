@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import SearchBtn from "../assets/SearchBtn";
 
 
 
@@ -70,7 +71,7 @@ const Body = () => {
 //not render component  - early return
 if(!listAllOfRestaurants) return null;
 
-if(filteredListOfRestaurants?.length===0) return <h1>No restaurant match your filter</h1>
+// if(filteredListOfRestaurants?.length===0) return <h1>No restaurant match your filter</h1>
 
     return listAllOfRestaurants?.length === 0 ? 
     (<Shimmer/>)
@@ -97,7 +98,7 @@ if(filteredListOfRestaurants?.length===0) return <h1>No restaurant match your fi
                                 setFilteredListOfRestaurants(data);
                             }}
                     >
-                        Search</button>
+                        Search</button>  
 
                     <p>{searchText}</p>
 
