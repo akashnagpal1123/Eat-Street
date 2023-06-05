@@ -1,88 +1,65 @@
 import { LOGO_URL } from "../utils/constants";
-import logo1 from "../assets/Frame1.png";
-import { useState } from "react";
-import { Link } from "react-router-dom"; //link component
-
-const loggedInUser = () => {
-    //api call to check authentication status
-    //if success return true
-    //else return false
-
-    return false;
-}
-
-const Title = () => (
-    <a href="/">
-        <img className="logo" alt="logo" src={logo1} />
-    </a>
-);
+import { useState, useEffect } from "react";
+import logo from "../assets/Frame1.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+  let btnName = "login";
+  let [buttonName, setButtonName] = useState("login");
 
-    const [title, setTitle] = useState("Eat Street")
-
-    return (
-        <div className="headerMain">
-            <div className="wrapper">
-                <div className="header">
-                    <Title />
-                    <div  >
-                        {/* <img className="logo" src={LOGO_URL} /> */}
-
-                        <h1>{title}</h1>
-                        <button onClick={() => { setTitle("Welcome Akash") }
-                        }>Press Button</button>
-                    </div>
-
-                    <div className="nav-items">
-                        <ul>
-                            <li>
-                                <Link to="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/about">
-                                    About
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/contact">
-                                    Contact Us
-                                </Link>
-                            </li>
-                            <li> <a href="#">Cart</a></li>
-                        </ul>
-                    </div>
+  //if no dependency array useeffect is called on every component render
+  // if dependency array is empty = [] -->useeffect is called on inital render and just once
+  //if there is something as an dependency [setButtonName], then it will call everytime the the buttonName changes.
 
 
-                    {
-                        //js expression and js statements
-                        //expressions work but js statementrs doesnt
-                        //((a=10),console.log(a))
-                        // if(){
+  useEffect(() => {
+    console.log("useeffect called")
+  }, [])
 
-                        // }
-                        // if else wouldn't work here in curly braces bcoz it is a statement 
-                        //therefore we will use ternary operatorr
+  return (
+    <div className="header-container">
+      <div className="wrapper">
+        <div className="header">
+          <div className="logo-container">
+            <img className="logo" src={logo} />
+          </div>
+          <div className="nav-items">
+            <ul>
 
+              <li>
+                <Link>Home</Link>
+              </li>
 
-                    }
-                    {isLoggedIn
-                        ?
-                        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-                        :
-                        <button onClick={() => setIsLoggedIn(true)}>Login</button>
-                    }
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
 
+              <li>
+                <Link to="/contact">Contact Us</Link>
+              </li>
 
-                </div>
-            </div>
+              <li>
+                <Link to="/cart">Cart</Link>
+              </li>
+               
+              <button className="header-login-btn"
+                onClick={() => {
+                  if (buttonName === "login") {
+                    setButtonName("logout")
+                  }
+                  else {
+                    setButtonName("login")
+                  }
+                }}
+              >
+                {buttonName}</button>
+            </ul>
+          </div>
         </div>
-    )
-
-}
+      </div>
+    </div>
+  );
+};
 
 export default Header;
