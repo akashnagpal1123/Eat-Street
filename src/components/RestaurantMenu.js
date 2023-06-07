@@ -1,45 +1,84 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { CDN_URL } from "../utils/constants";
+import { RES_IMAGE } from "../utils/constants";
+import Shimmer from "./Shimmer";
+import { MENU_API_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
 
-    //how to read a dynamic url using params 
-    const params = useParams();
-    //destructuring id
-    const { resId } = params;
-    console.log(params);
+    const [resInfo, setResInfo] = useState(null);
 
-    const [restaurant, setRestaurant] = useState({});
+    //how to read a dynamic url using params 
+    // const params = useParams();
+    //destructuring id
+    const { resId } = useParams();
+    // console.log(params);
 
     //getrestarantinfo will be an async function
     useEffect(() => {
-        getRestaurantInfo();
+        fetchMenu();
     }, []);
 
-    async function getRestaurantInfo() {
-        const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.634817297382003&lng=77.12153971195221&restaurantId=343544"
+    const fetchMenu = async () => {
+        const data = await fetch(MENU_API_URL + resId
         );
-
         const json = await data.json();
         console.log(json);
-        console.log(json.data.cards[0].card.card.info);
-        console.log(Object.values(json.data.cards[0]))
-        setRestaurant(json.data)
-    }
-        // {console.log(Object.values()) }
-        // <h2>Restaurant Name {restaurant.cards[0].card.card.info.name}</h2>
-        // <img src={CDN_URL + restaurant.cards[0].card.card.info.cloudinaryImageId} />
-    return (
-        <div>
-            <div>
-                <h1>Restaurant id: {resId}</h1>
-                <h2>Restaurant Name {restaurant.cards[0].card.card.info.name}</h2>
-                <img src={CDN_URL + restaurant.cards[0].card.card.info.cloudinaryImageId} />
+        setResInfo(json.data);
 
+        console.log(resInfo?.cards[0]?.card?.card?.info);
+    }
+
+    if (resInfo === null) {
+        return <Shimmer />;
+    }
+
+    const { name, cuisines, costForTwoMessage, cloudinaryImageId } = resInfo?.cards[0]?.card?.card?.info;
+
+    const { itemCards } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    console.log(itemCards);
+
+
+
+    return (
+        <div className="restaurant-info-container">
+            <div className="wrapper">
+                <div className="restaurant-basic-details-container">
+                    <div className="basic-det-1">
+                        <h2>{name}</h2>
+                        <h3>{cuisines.join(", ")}</h3>
+                        <h3>{costForTwoMessage}</h3>
+                    </div>
+
+                    <div className="basic-det-2">
+                        {/* <img src={RES_IMAGE+cloudinaryImageId} /> */}
+
+                    </div>
+
+
+                </div>
+
+
+                <div className="restaurant-menu-container">
+                    {/* <h1>Restaurant id: </h1> */}
+                    <ul className="menu-list-ul">
+                        {itemCards.map(item =>
+                            <li
+                                key={item.card.info.id}
+                            >
+                                {item.card.info.name} - Rs.{item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+                            </li>)}
+
+                        <li>{itemCards[3].card.info.name}</li>
+                    </ul>
+                    {/* <p>Use a map function to iterate</p> */}
+
+                </div>
             </div>
 
-        </div>
+
+
+        </div >
     )
 }
 

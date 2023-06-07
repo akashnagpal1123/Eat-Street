@@ -1,6 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+// import RestaurantMenu from "./RestaurantMenu";
 // import resList from "../utils/mockData";
 
 const Body = () => {
@@ -41,7 +43,7 @@ const Body = () => {
             <div className="search">
 
               <input type="text" className="search-box-style"
-              placeholder="Search any Restaurant"
+                placeholder="Search any Restaurant"
                 value={searchText}
                 onChange={(e) => {
                   setSearchText(e.target.value)
@@ -74,9 +76,11 @@ const Body = () => {
           </div>
           <h1>{listOfRestaurants.length} Restaurants Near You</h1>
           <div className="res-container">
-            
+
             {filteredRestaurants.map((restaurant) => (
-              <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+              <Link key={restaurant.data.id} to={"/restaurants/" + restaurant.data.id}>
+                <RestaurantCard  resData={restaurant} />
+              </Link>
             ))}
           </div>
         </div>

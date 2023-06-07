@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
 }
 .wrapper {
@@ -296,4 +296,51 @@
 .search-box-style:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+
+
+/* Restaurant Menu CSS */
+.restaurant-info-container{
+  padding: 50px 0px;
+}
+.restaurant-basic-details-container{
+  display: flex;
+}
+.basic-det-1 {
+ background-color: #2b2828;
+  width: 100%;
+  padding: 40px;
+  border-radius: 20px;
+}
+.basic-det-2{
+  background-color: #e2e2e2d6;
+  margin: 0 10px ;
+  padding: 40px;
+  border-radius: 20px;
+  width:70%;
+}
+
+.basic-det-2{
+  text-align: center;
+}
+.basic-det-2 img{
+  width: 40%;
+}
+
+.basic-det-1 h2{
+  color: rgb(255, 255, 255);  
+  font-size: 40px;
+}
+
+.basic-det-1 h3{
+  color: rgb(202, 200, 200);
+
+}
+
+.restaurant-menu-container{
+  /* background-color: #f1d4ff; */
+  margin: 30px 0;;
+  width: 100%;
+  padding: 40px 0;
 }
