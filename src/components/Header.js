@@ -28,7 +28,7 @@ const Header = () => {
             <ul>
 
               <li>
-                <Link>Home</Link>
+                <Link to="">Home</Link>
               </li>
 
               <li>

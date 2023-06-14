@@ -7,7 +7,8 @@ export const MENU_API_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGUL
 
 export const RES_IMAGE = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_320,h_320,c_fill/"
 
-export const MENU_ITEM_IMG_URL="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_320,h_320,c_fill/"
+// export const MENU_ITEM_IMG_URL="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_135,h_135,c_fit/"
+export const MENU_ITEM_IMG_URL="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_120,h_100/"
 
 
 //in a single file i have to export multiple things therefore 
