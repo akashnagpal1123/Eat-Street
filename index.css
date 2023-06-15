@@ -313,6 +313,34 @@
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
+/* About.js styling*/
+.user-card-style{
+  margin: 15px;
+  padding: 40px 20px;
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+}
+/* .res-card:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #febdbd;
+} */
+
+.user-card-style {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5%;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.user-card-style:hover {
+    /* rotate: 360deg; */
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #f0f0f0;
+  scale: 1.002;
+}
+
 
 
 /* Restaurant Menu CSS */
@@ -330,8 +358,9 @@
   padding: 40px 40px;
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.22);
   background-image: linear-gradient(to bottom, #fec04b, #ff8bfd);
+  background-image: linear-gradient(to right, #000000,rgb(49, 49, 49));
   background-size:cover;
-  border-radius: 15px;
+  /* border-radius: 15px; */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 /* .basic-det-1 {
@@ -342,14 +371,21 @@
   border-radius: 0px;
 } */
 
-.basic-det-1 , .basic-det-2{
-width: 50%;
+.basic-det-1{
+width: 60%;
 }
+.basic-det-2{
+  width: 40%;
+  }
+
 .basic-det-1-img-div{
   text-align: right;
+
 }
 .basic-det-1-img-div img{
-  width:60%;
+  width:80%; 
+  border-radius: 20px;
+   border: 10px solid rgb(49, 49, 49);
 }
 
 /* .basic-det-2{
@@ -361,7 +397,8 @@ width: 50%;
 
 .basic-det-1 h2{
   color: #213555;
-  font-size: 60px;
+  color: #ffffff;
+  font-size: 56px;
 }
 
 .basic-det-1 h3{
@@ -409,6 +446,12 @@ width: 50%;
  
 }
 
+.pscrollbar{
+  background-color: red;
+
+  /* color="#00FFFF" bgColor="#f2f2f2"  */
+
+}
 
 
 

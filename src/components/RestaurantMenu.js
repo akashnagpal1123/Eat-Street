@@ -4,6 +4,9 @@ import { RES_IMAGE } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { MENU_ITEM_IMG_URL } from "../utils/constants";
 import { MENU_API_URL } from "../utils/constants";
+
+import PageScrollProgressBar from "react-page-scroll-progress-bar";
+
 import BG11 from "../assets/bg-11.jpg";
 
 const RestaurantMenu = () => {
@@ -45,6 +48,7 @@ const RestaurantMenu = () => {
 
     return (
         <div className="restaurant-info-container">
+                  
             <div className="wrapper">
 
                 <div className="restaurant-basic-details-container">
@@ -65,14 +69,13 @@ const RestaurantMenu = () => {
 
 
                     </div>
-                    <div className="basic-det-1">
+
+                    <div className="basic-det-2">
                         <div className="basic-det-1-img-div">
-                            <img src={BG11} />
+                            
+                            <img src={RES_IMAGE+cloudinaryImageId} />
                         </div>
                     </div>
-
-
-
 
                 </div>
 
@@ -118,6 +121,7 @@ const RestaurantMenu = () => {
                     </div>
                 </div>
             </div>
+            <PageScrollProgressBar className="pscrollbar" color="red" bgColor="transparent" height="6px" top="99%" />
         </div >
     )
 }
