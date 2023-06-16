@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
         return <Shimmer />;
     }
 
-    const { name, cuisines, costForTwoMessage, cloudinaryImageId, avgRating } = resInfo?.cards[0]?.card?.card?.info;
+    const { name, cuisines, costForTwoMessage, cloudinaryImageId, avgRating, locality } = resInfo?.cards[0]?.card?.card?.info;
 
     const { itemCards, title } = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
@@ -61,6 +61,7 @@ const RestaurantMenu = () => {
                             <h3>
                                 {avgRating}❤️
                             </h3>
+                            <h3> {locality}</h3>
                             {/* <div 
                             className={({avgRating}>4.9) ? ("temp2" ) : ("temp1") } >
                             Rating: {avgRating}❤️

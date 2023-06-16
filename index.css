@@ -397,12 +397,16 @@ width: 60%;
 
 .basic-det-1 h2{
   color: #213555;
-  color: #ffffff;
+  color: #e6e6e6;
   font-size: 56px;
 }
 
 .basic-det-1 h3{
-  color: rgb(92, 92, 92);
+  color: #dcdcdc;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 30px;
+  letter-spacing: 5px;
 
 }
 
