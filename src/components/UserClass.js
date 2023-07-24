@@ -1,20 +1,76 @@
 import React from "react";
 
-
 class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props){
-        super(props);console.log(props);
-    }
+    //state variable
+    this.state = {
+      userInfo: {
+        name: "Dummy",
+        location: "Default",
+      },
+    };
+    console.log(this.props.name + "Child Constructor");
+  }
 
-    render() {
-        return (
-        <div className="user-card">
-            <h2>Name: Akash {this.props.name}</h2>
-            <h3>Location: Delhi</h3>
-            <h3>Social Links: </h3>
-        </div>
-        );
-    }
+  async componentDidMount() {
+    //console.log(this.props.name + "Child Component Did Mount");
+    // Api call
+
+    const data = await fetch("https://api.github.com/users/akashnagpal1123");
+    const json = await data.json();
+
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log(json);
+  }
+
+  componentDidUpdate() {
+    console.log("Component Did Update");
+  }
+
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
+  }
+
+  render() {
+    console.log(this.props.name + "Child Render");
+
+    const { name, location, avatar_url } = this.state.userInfo;
+    return (
+      <div className="user-card">
+        <img src={avatar_url} />
+        <h2>Name: {name}</h2>
+        <h3>Location: {location}</h3>
+        <h4>Contact: </h4>
+      </div>
+    );
+  }
 }
+
 export default UserClass;
+
+/****
+ *
+ * --- MOUNTING ----
+ *
+ * Constructor (dummy)
+ * Render (dummy)
+ *      <H my >
+ * Component Did MOunt
+ *      <API Call>
+ *      <this.setState> -> State variable is updated
+ *
+ * ---- UPDATE
+ *
+ *      render(APi data)
+ *      <HTML (new API data>)
+ *      ccomponentDid Update
+ *
+ *
+ *
+ *
+ */

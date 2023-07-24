@@ -27,3 +27,9 @@ Normal JS utility Functions
 2 imp hooks
 1. useState() - to generate superpowerfull variables in react
 2. useEffect()
+
+
+<!-- Higher Order Components are the components that takes a component and returns a component 
+Why to use
+when to use
+-->

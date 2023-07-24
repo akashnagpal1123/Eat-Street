@@ -16,6 +16,7 @@
   .error-container {
     text-align: center;
     font-size: 106px;
+
     font-family: 'Catamaran', sans-serif;
     font-weight: 800;
     margin: 70px 15px;
@@ -119,8 +120,6 @@
   
   /* demo stuff */
   * {
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
       box-sizing: border-box;
   }
   body {
