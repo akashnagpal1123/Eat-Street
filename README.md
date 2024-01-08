@@ -67,3 +67,6 @@ Website draft URL: https://654b7cec59d2f9047e370919--eatstreet.netlify.app
 #very important
 
 
+  "main": "App.js",
+
+
