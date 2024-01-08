@@ -1,12 +1,13 @@
 import React from 'react';
-import { LOGO_URL } from "../utils/constants"
+import { LOGO_URL } from "../utils/constants";
+import logo from "../assets/Frame1.png";
 
 function Footer() {
     return (
-        <div className="footer">
+        <div className="footer bg-fuchsia-800  text-black">
             <div className="wrapper">
-                <div >
-                    <img className="logo-footer" src={LOGO_URL} />
+                <div className="logo-container ">
+                    <img className="m-5" src={logo} />
                 </div>
                 <div className="footer-links">
                     <ul>
