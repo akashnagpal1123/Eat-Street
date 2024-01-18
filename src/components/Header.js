@@ -41,11 +41,13 @@ const Header = () => {
 
   return (
     <div className="header-container  ">
-      <div className="wrapper">
-        <div className="bg-purple-800 flex justify-between shadow-lg mb-6">
+
+        <div className="bg-purple-800 flex justify-between shadow-lg ">
+
           <div className="logo-container">
             <img className="m-3 ml-10" src={logo} />
           </div>
+
           <div className="flex items-center">
             <ul className="flex p-5 text-xl font-semibold text-slate-200 ">
 
@@ -90,9 +92,10 @@ const Header = () => {
 
             </ul>
           </div>
+
         </div>
 
-        <div className="bg-pink-200">
+        <div className="bg-purple-300 flex flex-row-reverse items-center px-5 mb-8">
           <button className="px-4"
             onClick={() => {
               if (buttonName === "login") {
@@ -112,8 +115,6 @@ const Header = () => {
 
         </div>
 
-
-      </div>
     </div>
   );
 };

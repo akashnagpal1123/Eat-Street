@@ -1,23 +1,23 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "description": "react project",
-  "main":"App.js",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "r-pract-1"
-  },
-  "keywords": [
-    "react",
-    "javascript"
-  ],
-  "author": "",
-  "license": "ISC",
+"name": "ep-1a",
+"version": "1.0.0",
+"description": "ep-1 for react pract",
+"main": "App.js",
+"scripts": {
+  "start": "parcel index.html",
+  "build": "parcel build index.html",
+  "test": "jest"
+},
+"repository": {
+  "type": "git",
+  "url": "r-pract-1"
+},
+"keywords": [
+  "react",
+  "javascript"
+],
+"author": "",
+"license": "ISC",
   "devDependencies": {
     "parcel": "^2.8.3",
     "postcss": "^8.4.26",

@@ -59,10 +59,10 @@ const Body = () => {
     // );
 
     setListOfRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -82,7 +82,7 @@ const Body = () => {
         <div className="wrapper">
           <div className="w-10/12 mx-auto">
 
-            <div className="m-1 p-1 items-center">
+            <div className=" m-1 p-1 items-center">
               <label>UserName</label>
 
               <input className="border border-black p-3" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}>
