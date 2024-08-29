@@ -1,4 +1,4 @@
-Deployment Link: https://eat-street-rlaa.vercel.app/
+Deployment Link:
 
 
 ------------------------------------
